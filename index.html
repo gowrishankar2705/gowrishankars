@@ -367,98 +367,6 @@
             color: var(--color-bg);
         }
 
-        /* Contact Section */
-        .contact-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-form {
-            background: var(--color-surface);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 1px solid var(--color-border);
-        }
-
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--color-primary);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: var(--color-bg);
-            border: 2px solid var(--color-border);
-            border-radius: 10px;
-            color: var(--color-text);
-            font-size: 1rem;
-            font-family: inherit;
-            transition: all 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--color-primary);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1.2rem;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            border: none;
-            border-radius: 10px;
-            color: var(--color-bg);
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .form-message {
-            margin-top: 1rem;
-            padding: 1rem;
-            border-radius: 10px;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .form-message.success {
-            background: rgba(0, 255, 136, 0.1);
-            border: 1px solid var(--color-accent);
-            color: var(--color-accent);
-        }
-
-        .form-message.error {
-            background: rgba(255, 0, 0, 0.1);
-            border: 1px solid #ff0000;
-            color: #ff0000;
-        }
-
         /* Footer */
         footer {
             background: var(--color-surface);
@@ -500,10 +408,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .contact-form {
-                padding: 2rem 1.5rem;
-            }
-
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -513,21 +417,6 @@
                 width: 100%;
                 max-width: 300px;
             }
-        }
-
-        /* Loading Animation */
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: var(--color-primary);
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -571,9 +460,6 @@
                             <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                                 <a onClick={() => scrollToSection('projects')}>Projects</a>
                             </motion.li>
-                            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                                <a onClick={() => scrollToSection('contact')}>Contact</a>
-                            </motion.li>
                         </ul>
                     </div>
                 </motion.nav>
@@ -582,10 +468,6 @@
 
         // Hero Section Component
         const Hero = () => {
-            const scrollToContact = () => {
-                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-            };
-
             const scrollToProjects = () => {
                 document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
             };
@@ -619,7 +501,7 @@
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.6 }}
                         >
-                            Building intelligent systems with Computer Vision,Machine Learning, 
+                            Building intelligent systems with Computer Vision, Machine Learning, 
                             and IoT | Transforming complex data into actionable insights
                         </motion.p>
                         <motion.div 
@@ -636,14 +518,7 @@
                             >
                                 View Projects
                             </motion.button>
-                            <motion.button 
-                                className="btn btn-secondary"
-                                whileHover={{ scale: 1.05, borderColor: "var(--color-secondary)" }}
-                                whileTap={{ scale: 0.95 }}
-                                onClick={scrollToContact}
-                            >
-                                Get in Touch
-                            </motion.button>
+                            {/* Removed Get in Touch button */}
                         </motion.div>
                     </div>
                 </section>
@@ -736,7 +611,7 @@
                     tags: ['Python', 'Streamlit', 'Google Sheets API', 'Data Viz'],
                     icon: '📊',
                     github: 'https://github.com/gowrishankar2705/Energy_Monitoring-System',
-                    demo: '#'
+                    
                 },
                 {
                     title: 'Object Navigationm System',
@@ -744,7 +619,7 @@
                     tags: ['Computer Vision','YOLO','Raspberry Pi','Python'],
                     icon: '👁️',
                     github: 'https://github.com/gowrishankar2705/object-navigation',
-                    demo: '#'
+                    
                 },
                 {
                     title: ' AI Assistant',
@@ -752,15 +627,15 @@
                     tags: ['NLP', 'AssemblyAI', 'ElevenLabs', 'Voice AI','OpenCV','PyTorch','YOLOv8'],
                     icon: '🎤',
                     github: 'https://github.com/gowrishankar2705/ai_assistant',
-                    demo: '#'
+                    
                 },
                 {
-                    title: 'Cmponent Detector  for Electronics',
+                    title: 'Cmponent Detector for Electronics',
                     description: 'Component Detector integrates AI-powered object detection models with an intuitive web interface to identify and classify electronic components in images or video streams. This project combines computer vision techniques with modern web development to provide real-time component recognition.',
                     tags: ['Deep Learning','Python Flask ', 'Transformers', 'Open CV','PyTorch or TensorFlow' ],
                     icon: '🤖',
                     github: 'https://github.com/gowrishankar2705/Component-Detector',
-                    demo: '#'
+                    
                 },
                 {
                     title: 'Ecommerce Website',
@@ -768,15 +643,15 @@
                     tags: ['HTML', 'CSS', 'Javascript', 'Node JS'],
                     icon: '🛒',
                     github: 'https://github.com/gowrishankar2705/swiftspotrs',
-                    demo: '#'
+                   
                 },
                 {
                     title: 'Turf Booking Website',
                     description: 'A simple and elegant Turf Booking Website built using HTML for front-end design. This project serves as a basic prototype for booking sports turfs online, enabling users to sign up, log in, and book their preferred turf slots.',
-                   tags: ['HTML', 'CSS', 'Javascript', 'Node JS'],
+                    tags: ['HTML', 'CSS', 'Javascript', 'Node JS'],
                     icon: '🏏',
                     github: 'https://github.com/gowrishankar2705/turfbooking',
-                    demo: '#'
+                    
                 }
             ];
 
@@ -850,160 +725,6 @@
             );
         };
 
-        // Contact Section Component
-        const Contact = () => {
-            const [formData, setFormData] = useState({
-                name: '',
-                email: '',
-                message: ''
-            });
-            const [status, setStatus] = useState({ type: '', message: '' });
-            const [isSubmitting, setIsSubmitting] = useState(false);
-
-            const handleChange = (e) => {
-                setFormData({
-                    ...formData,
-                    [e.target.name]: e.target.value
-                });
-            };
-
-            const handleSubmit = async (e) => {
-                e.preventDefault();
-                setIsSubmitting(true);
-                setStatus({ type: '', message: '' });
-
-                try {
-                    const response = await fetch('http://localhost:3001/api/contact', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(formData)
-                    });
-
-                    const data = await response.json();
-
-                    if (response.ok) {
-                        setStatus({ 
-                            type: 'success', 
-                            message: 'Message sent successfully! I\'ll get back to you soon.' 
-                        });
-                        setFormData({ name: '', email: '', message: '' });
-                    } else {
-                        setStatus({ 
-                            type: 'error', 
-                            message: data.error || 'Failed to send message. Please try again.' 
-                        });
-                    }
-                } catch (error) {
-                    setStatus({ 
-                        type: 'error', 
-                        message: 'Network error. Please check if the backend server is running on port 3001.' 
-                    });
-                }
-
-                setIsSubmitting(false);
-            };
-
-            return (
-                <section id="contact">
-                    <motion.h2 
-                        className="section-title"
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        Get In Touch
-                    </motion.h2>
-                    <div className="contact-content">
-                        <motion.div
-                            className="contact-form"
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            <form onSubmit={handleSubmit}>
-                                <motion.div 
-                                    className="form-group"
-                                    initial={{ opacity: 0, x: -50 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.6, delay: 0.2 }}
-                                >
-                                    <label htmlFor="name">Name</label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        required
-                                        placeholder="Your name"
-                                    />
-                                </motion.div>
-                                <motion.div 
-                                    className="form-group"
-                                    initial={{ opacity: 0, x: -50 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.6, delay: 0.3 }}
-                                >
-                                    <label htmlFor="email">Email</label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        required
-                                        placeholder="your.email@example.com"
-                                    />
-                                </motion.div>
-                                <motion.div 
-                                    className="form-group"
-                                    initial={{ opacity: 0, x: -50 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.6, delay: 0.4 }}
-                                >
-                                    <label htmlFor="message">Message</label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        required
-                                        placeholder="Tell me about your project or just say hi!"
-                                    ></textarea>
-                                </motion.div>
-                                <motion.button
-                                    type="submit"
-                                    className="submit-btn"
-                                    disabled={isSubmitting}
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                >
-                                    {isSubmitting ? <span className="loading"></span> : 'Send Message'}
-                                </motion.button>
-                            </form>
-                            {status.message && (
-                                <motion.div
-                                    className={`form-message ${status.type}`}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5 }}
-                                >
-                                    {status.message}
-                                </motion.div>
-                            )}
-                        </motion.div>
-                    </div>
-                </section>
-            );
-        };
-
         // Footer Component
         const Footer = () => {
             return (
@@ -1070,7 +791,6 @@
                     <Hero />
                     <About />
                     <Projects />
-                    <Contact />
                     <Footer />
                 </>
             );
